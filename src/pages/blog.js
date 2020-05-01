@@ -1,11 +1,22 @@
 import React from "react"
-import { Link } from "gatsby"
 import Layout from "../components/Layout"
-const blog = () => {
+import StyledHero from "../components/StyledHero"
+import { graphql } from "gatsby"
+export const getData = graphql`
+  query {
+    blogImage: file(relativePath: { eq: "blogBcg.jpeg" }) {
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 4160) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`
+const blog = ({ data }) => {
   return (
     <Layout>
-      hello from blog page!!
-      <Link to="/">back home</Link>
+      <StyledHero img={data.blogImage.childImageSharp.fluid} />
     </Layout>
   )
 }
