@@ -9,6 +9,11 @@ exports.createPages = async ({ graphql, actions }) => {
           slug
         }
       }
+      posts: allContentfulPost {
+        nodes {
+          slug
+        }
+      }
     }
   `)
   data.tours.nodes.forEach(tour => {
@@ -17,6 +22,15 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve("./src/templates/tour-template.js"),
       context: {
         slug: tour.slug,
+      },
+    })
+  })
+  data.posts.nodes.forEach(post => {
+    createPage({
+      path: `blog/${post.slug}`,
+      component: path.resolve("./src/templates/blog-template.js"),
+      context: {
+        slug: post.slug,
       },
     })
   })
