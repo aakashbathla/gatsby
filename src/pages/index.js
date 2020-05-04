@@ -6,6 +6,7 @@ import Banner from "../components/Banner"
 import About from "../components/home/About"
 import Services from "../components/home/Services"
 import { graphql } from "gatsby"
+import FeaturedTours from "../components/home/FeatruedTour"
 export const getData = graphql`
   query {
     defaultImage: file(relativePath: { eq: "defaultBcg.jpeg" }) {
@@ -31,5 +32,6 @@ export default ({ data }) => (
     </StyledHero>
     <About />
     <Services />
+    <FeaturedTours />
   </Layout>
 )
