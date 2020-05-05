@@ -7,6 +7,7 @@ import About from "../components/home/About"
 import Services from "../components/home/Services"
 import { graphql } from "gatsby"
 import FeaturedTours from "../components/home/FeatruedTour"
+import SEO from "../components/SEO"
 export const getData = graphql`
   query {
     defaultImage: file(relativePath: { eq: "defaultBcg.jpeg" }) {
@@ -20,6 +21,7 @@ export const getData = graphql`
 `
 export default ({ data }) => (
   <Layout>
+    <SEO title="Home Page" description="this is description" />
     <StyledHero home="true" img={data.defaultImage.childImageSharp.fluid}>
       <Banner
         title="continue exploring"

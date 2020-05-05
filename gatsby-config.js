@@ -9,11 +9,13 @@ require("dotenv").config({
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "BackRoads",
+    title: "Aakash Bathla Trek Guide",
     description:
-      "Explore awesome worldwide tours & discover what makes each of them unique. Forget your daily routine & say yes to adventure",
-    author: "@aakash",
-    data: ["item1", "item2"],
+      "Explore awesom e worldwide tours & discover what makes each of them unique. Forget your daily routine & say yes to adventure",
+    author: "aakash bathla",
+    twitterUsername: "AakashBathla1",
+    image: "/defaultBcg.jpeg",
+    siteUrl: "https://bathla-trekking.netlify.app/",
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -28,6 +30,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-playground`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
