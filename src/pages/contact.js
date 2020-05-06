@@ -3,6 +3,7 @@ import Layout from "../components/Layout"
 import StyledHero from "../components/StyledHero"
 import { graphql } from "gatsby"
 import Contact from "../components/Contact/Contact"
+import SEO from "../components/SEO"
 export const getData = graphql`
   query {
     contactImage: file(relativePath: { eq: "connectBcg.jpeg" }) {
@@ -18,6 +19,7 @@ export const getData = graphql`
 const contact = ({ data }) => {
   return (
     <Layout>
+      <SEO title="Contact Page" />
       <StyledHero img={data.contactImage.childImageSharp.fluid} />
       <Contact />
     </Layout>

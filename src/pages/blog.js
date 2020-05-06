@@ -3,6 +3,7 @@ import Layout from "../components/Layout"
 import StyledHero from "../components/StyledHero"
 import { graphql } from "gatsby"
 import BlogList from "../components/Blog/BlogList"
+import SEO from "../components/SEO"
 export const getData = graphql`
   query {
     blogImage: file(relativePath: { eq: "blogBcg.jpeg" }) {
@@ -17,6 +18,7 @@ export const getData = graphql`
 const blog = ({ data }) => {
   return (
     <Layout>
+      <SEO title="Blog Page" />
       <StyledHero img={data.blogImage.childImageSharp.fluid} />
       <BlogList />
     </Layout>

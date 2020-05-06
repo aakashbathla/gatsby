@@ -8,7 +8,7 @@ import { FaMoneyBillWave, FaMap } from "react-icons/fa"
 import Day from "../components/SingleTour/Day"
 import StyledHero from "../components/StyledHero"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-
+import SEO from "../components/SEO"
 export const query = graphql`
   query($slug: String!) {
     tour: contentfulTour(slug: { eq: $slug }) {
@@ -48,6 +48,7 @@ const Template = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title="Tours Page" />
       <StyledHero img={mainImage.fluid} />
       <section className={styles.template}>
         <div className={styles.center}>

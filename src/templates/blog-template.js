@@ -1,4 +1,5 @@
 import React from "react"
+import SEO from "../components/SEO"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import styles from "../css/single-blog.module.css"
@@ -26,6 +27,7 @@ const template = ({ data }) => {
   }
   return (
     <Layout>
+      <SEO title="Blog Page" />
       <section className={styles.blog}>
         <div className={styles.center}>
           <h1>{title}</h1>

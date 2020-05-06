@@ -21,7 +21,7 @@ export const getData = graphql`
 `
 export default ({ data }) => (
   <Layout>
-    <SEO title="Home Page" description="this is description" />
+    <SEO title="Home Page" />
     <StyledHero home="true" img={data.defaultImage.childImageSharp.fluid}>
       <Banner
         title="continue exploring"
